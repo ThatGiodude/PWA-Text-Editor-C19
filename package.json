@@ -1,16 +1,15 @@
 {
-  "name": "JATE",
+  "name": "jate",
   "version": "1.0.0",
-  "description": "",
+  "description": "Just your average text editor",
   "main": "server.js",
   "scripts": {
-    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
+    "start:dev": "concurrently \"cd client && npm run build\" \"cd server && npm run server\" ",
     "start": "npm run build && cd server && node server.js",
-    "server": "cd server nodemon server.js --ignore client",
+    "server": "cd server node server.js --ignore client",
     "build": "cd client && npm run build",
     "install": "cd server && npm i && cd ../client && npm i",
-    "client": "cd client && npm start",
-    "render-build": "npm install && npm run build"
+    "client": "cd client && npm start"
   },
   "keywords": [],
   "author": "",
@@ -20,12 +19,7 @@
     "if-env": "^1.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.0",
-    "@babel/preset-env": "^7.24.0",
-    "babel-loader": "^9.1.3",
     "concurrently": "^5.2.0",
-    "css-loader": "^6.10.0",
-    "nodemon": "^2.0.4",
-    "style-loader": "^3.3.4"
+    "nodemon": "^2.0.4"
   }
 }
